@@ -13,7 +13,7 @@ app = Flask(__name__)
 User = namedtuple('User', 'name avatar token_hash')
 class USERS:
     chase = User(name='Chase', avatar='', token_hash='3a7d3eb3a3b9c7655b936231b2e0b4af')
-    rory = User(name='Rory', avatar='', token_hash='not yet set')
+    rory = User(name='Rory', avatar='', token_hash='d9eb2ad4e1be3d96cafe4808710c5abf')
 
 USER_TOKEN_HASHES = {
     USERS.chase.token_hash: USERS.chase,
@@ -77,7 +77,7 @@ JASONETTE_TEMPLATE = """
                 "{{#each $jason.messages}}":{
                   "type":"horizontal",
                   "style":{
-                    "spacing":"10"
+                    "spacing":"2"
                   },
                   "components":[
                     {
