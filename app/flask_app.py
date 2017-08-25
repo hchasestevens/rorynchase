@@ -153,6 +153,8 @@ def messages(token):
         LOG.write(json.dumps(post))
         return jsonify(messages=POSTS), 200
     # if post, needs update
+    # ^ ignore that for now and just return stuff
+    return jsonify(messages=POSTS), 200
     
     # if not post:
     needs_update = UPDATES.get(token_hash, False)
