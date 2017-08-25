@@ -4,6 +4,7 @@
 import hashlib
 from functools import lru_cache
 from collections import namedtuple
+import json
 
 from flask import Flask, jsonify
 
@@ -25,7 +26,7 @@ POSTS = [  # should actually come from log
     {'user': 'Chase', 'message': 'how u?', 'avatar': ''}, 
     {'user': 'Rory', 'message': 'aight', 'avatar': ''},
 ]
-LAST_RENDERED = jsonify(messages=POSTS)
+LAST_RENDERED = json.dumps(dict(messages=POSTS))
 
 
 JASONETTE_TEMPLATE = """
@@ -127,7 +128,7 @@ JASONETTE_TEMPLATE = """
 }
 """
 
-INVALID_TOKEN_RESPONSE = jsonify(messages=[{'user': 'Error', 'message': 'Invalid user token!', 'avatar': ''}])
+INVALID_TOKEN_RESPONSE = json.dumps({'messages': [{'user': 'Error', 'message': 'Invalid user token!', 'avatar': ''}]})
 
 
 @lru_cache(max_size=32)
