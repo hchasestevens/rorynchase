@@ -85,8 +85,8 @@ JASONETTE_TEMPLATE = """
                       "type":"image",
                       "url":"{{avatar}}",
                       "style":{
-                        "width":"30",
-                        "height":"30",
+                        "width":"5",
+                        "height":"5",
                         "corner_radius":"15"
                       }
                     },
