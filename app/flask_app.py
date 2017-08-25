@@ -152,6 +152,7 @@ def messages(token):
         post = {'user': user.name, 'message': request.form['text'], 'avatar': user.avatar}
         POSTS.append(post)
         LOG.write(json.dumps(post))
+        LOG.flush()
         return jsonify(messages=POSTS), 200
     # if post, needs update
     # ^ ignore that for now and just return stuff
