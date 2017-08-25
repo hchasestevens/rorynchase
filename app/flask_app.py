@@ -18,7 +18,7 @@ USER_TOKEN_HASHES = {
     USERS.chase.token_hash: USERS.chase,
 }
 
-UPDATES = {token_hash: False for token_hash in USER_TOKENS}
+UPDATES = {token_hash: False for token_hash in USER_TOKEN_HASHES}
 
 LOG = open('log.txt', 'a')
 POSTS = [  # should actually come from log
