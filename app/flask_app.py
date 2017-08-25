@@ -17,6 +17,7 @@ class USERS:
 
 USER_TOKEN_HASHES = {
     USERS.chase.token_hash: USERS.chase,
+    USERS.rory.token_hash: USERS.rory
 }
 
 UPDATES = {token_hash: False for token_hash in USER_TOKEN_HASHES}
