@@ -131,7 +131,7 @@ JASONETTE_TEMPLATE = """
 INVALID_TOKEN_RESPONSE = json.dumps({'messages': [{'user': 'Error', 'message': 'Invalid user token!', 'avatar': ''}]})
 
 
-@lru_cache(max_size=32)
+#@lru_cache(max_size=32)
 def hash_token(token):
     return hashlib.md5(token).hexdigest()
 
