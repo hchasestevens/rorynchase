@@ -93,18 +93,9 @@ JASONETTE_TEMPLATE = """
                       "type":"label",
                       "style":{
                         "font":"Courier",
-                        "size":"14",
-                        "color":"grey"
-                      },
-                      "text":"{{user}}: "
-                    },
-                    {
-                      "type":"label",
-                      "style":{
-                        "font":"Courier",
                         "size":"14"
                       },
-                      "text":"{{message}}"
+                      "text":"{{user}}: {{message}}"
                     }
                   ]
                 }
