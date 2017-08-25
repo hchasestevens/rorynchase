@@ -142,15 +142,20 @@ def main(token):
 def messages(token):
     """Allows post of message, returning all current messages."""
     token_hash = hash_token(token)
+    user = USER_TOKEN_HASHES.get(token_hash)
+    if user is None:
+        return INVALID_TOKEN_RESPONSE, 403
     
     # if post, do post, write to log
+    if request.method == 'POST':
+        post = {'user': user.name, 'message': request.form['text'], 'avatar': user.avatar}
+        POSTS.append(post)
+        LOG.write(json.dumps(post))
+        return jsonify(messages=POSTS), 200
     # if post, needs update
     
     # if not post:
-    needs_update = UPDATES.get(token_hash)
-    if needs_update is None:
-        return INVALID_TOKEN_RESPONSE, 403
-    
+    needs_update = UPDATES.get(token_hash, False)
     if not needs_update:
         return LAST_RENDERED, 200
     
